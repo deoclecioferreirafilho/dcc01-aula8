@@ -18,15 +18,16 @@
         var eAdicionar = document.getElementById("adicionar");
         var ePresentes = document.getElementById("presentes");
 
+        eNome.contentEditable = true;
+
         eAdicionar.addEventListener("click", adicionarPresentes);
 
         function adicionarPresentes()
         {
             var nome = eNome.textContent;
-            var item = "<li>"+nome+"</li>";
-            
-            
-
+            var item = document.createElement("li");
+            item.textContent = nome;
+            ePresentes.appendChild(item);
         }
 
 
