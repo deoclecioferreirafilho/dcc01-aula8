@@ -10,13 +10,15 @@
    <p>Nome do aluno: <span id="nome">Fulano</span></p>
    <button id="adicionar">Adicionar</button>
 
-   <h1>Presentes:</h1>
+   <h1>Presentes: <span id="total"></span></h1>
    <ul id="presentes"></ul>
 
     <script>
         var eNome = document.getElementById("nome");
         var eAdicionar = document.getElementById("adicionar");
         var ePresentes = document.getElementById("presentes");
+        var eTotal = document.getElementById("total");
+        eTotal.textContent = ePresentes.children.length;
 
         eNome.contentEditable = true;
 
@@ -28,9 +30,8 @@
             var item = document.createElement("li");
             item.textContent = nome;
             ePresentes.appendChild(item);
+            eTotal.textContent = ePresentes.children.length;
         }
-
-
 
     </script>
 
